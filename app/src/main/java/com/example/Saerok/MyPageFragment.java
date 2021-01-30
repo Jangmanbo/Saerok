@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ public class MyPageFragment extends Fragment {
     private static final int GET_IMAGE_FOR_PROFILEIMAGE = 202;
     private ImageView backgroundImage;
     private ImageView profileImage;
+    private ImageButton settingsButton;
 
     @Nullable
     @Override
@@ -45,6 +47,15 @@ public class MyPageFragment extends Fragment {
                 startActivityForResult(intent, GET_IMAGE_FOR_PROFILEIMAGE);
             }
         });
+        settingsButton = view.findViewById(R.id.settingsButton);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
 
