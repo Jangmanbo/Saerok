@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -14,9 +13,9 @@
             android:id="@+id/backgroundImage"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:contentDescription="backgroundImage"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/sky"
-            android:contentDescription="backgroundImage" />
+            app:srcCompat="@drawable/sky" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,6 +82,16 @@
 
     </androidx.cardview.widget.CardView>
 
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/settings" />
 
 
 </FrameLayout>
