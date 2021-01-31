@@ -1,4 +1,4 @@
-package com.example.Saerok;
+package com.example.Saerok.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.Saerok.fragment.ListFragment;
+import com.example.Saerok.fragment.MyPageFragment;
+import com.example.Saerok.fragment.PostFragment;
+import com.example.Saerok.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

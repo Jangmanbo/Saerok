@@ -1,4 +1,4 @@
-package com.example.Saerok;
+package com.example.Saerok.fragment;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.Saerok.R;
 
 import static android.app.Activity.RESULT_OK;
 

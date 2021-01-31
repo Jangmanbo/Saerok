@@ -1,4 +1,4 @@
-package com.example.Saerok;
+package com.example.Saerok.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+
+import com.example.Saerok.R;
 
 public class ListFragment extends Fragment {
     androidx.appcompat.widget.Toolbar toolbar;

@@ -1,20 +1,25 @@
-package com.example.Saerok;
+package com.example.Saerok.activity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.example.Saerok.R;
 
 public class AddCategoryActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -64,6 +69,10 @@ public class AddCategoryActivity extends AppCompatActivity {
                 finish();
                 return true;
             }
+
+            case R.id.post:
+                Toast.makeText(this.getApplicationContext(), "등록 버튼 클릭",Toast.LENGTH_SHORT).show();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -82,5 +91,14 @@ public class AddCategoryActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+
+    //추가된 소스, ToolBar에 menu.xml을 인플레이트함
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //return super.onCreateOptionsMenu(menu);
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.add_category_toolbar_items, menu);
+        return true;
     }
 }

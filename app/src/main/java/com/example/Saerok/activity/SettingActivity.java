@@ -1,9 +1,11 @@
-package com.example.Saerok;
+package com.example.Saerok.activity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.Saerok.R;
 
 public class SettingActivity extends AppCompatActivity {
 
