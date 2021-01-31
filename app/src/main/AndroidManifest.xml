@@ -17,6 +17,10 @@
         <activity android:name="com.example.Saerok.SettingActivity">
 
         </activity>
+
+        <activity android:name="com.example.Saerok.AddCategoryActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -20,9 +20,8 @@ import static android.app.Activity.RESULT_OK;
 public class MyPageFragment extends Fragment {
     private static final int GET_IMAGE_FOR_BACKGROUNDIMAGE = 201;
     private static final int GET_IMAGE_FOR_PROFILEIMAGE = 202;
-    private ImageView backgroundImage;
-    private ImageView profileImage;
-    private ImageButton settingsButton;
+    private ImageView backgroundImage, profileImage;
+    private ImageButton settingsButton, addCategoryButton;
 
     @Nullable
     @Override
@@ -52,6 +51,16 @@ public class MyPageFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity().getApplicationContext(), SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addCategoryButton = view.findViewById(R.id.addCategoryButton);
+        addCategoryButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), AddCategoryActivity.class);
                 startActivity(intent);
             }
         });
