@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -138,7 +139,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:tag="red" />
+                                android:textColor="#00000000"
+                                android:textSize="0sp"
+                                android:text="#FF9C9C" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -160,7 +163,10 @@
                                 android:id="@+id/checkBox2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical" />
+                                android:layout_gravity="center_vertical"
+                                android:text="#FFEB3B"
+                                android:textColor="#00000000"
+                                android:textSize="0sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -182,7 +188,10 @@
                                 android:id="@+id/checkBox3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical" />
+                                android:layout_gravity="center_vertical"
+                                android:text="#4CAF50"
+                                android:textColor="#00000000"
+                                android:textSize="0sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -204,7 +213,10 @@
                                 android:id="@+id/checkBox4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical" />
+                                android:layout_gravity="center_vertical"
+                                android:text="#03A9F4"
+                                android:textColor="#00000000"
+                                android:textSize="0sp" />
                         </LinearLayout>
 
 
@@ -240,7 +252,11 @@
                                 android:id="@+id/checkBox5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical" />
+                                android:layout_gravity="center_vertical"
+                                android:text="#3F51B5"
+                                android:textColor="#00000000"
+                                android:textSize="0sp"
+                                android:visibility="visible" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -262,7 +278,10 @@
                                 android:id="@+id/checkBox6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical" />
+                                android:layout_gravity="center_vertical"
+                                android:text="#AF1FE3"
+                                android:textColor="#00000000"
+                                android:textSize="0sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -284,7 +303,10 @@
                                 android:id="@+id/checkBox7"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical" />
+                                android:layout_gravity="center_vertical"
+                                android:text="#F109EC"
+                                android:textColor="#00000000"
+                                android:textSize="0sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -306,7 +328,10 @@
                                 android:id="@+id/checkBox8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical" />
+                                android:layout_gravity="center_vertical"
+                                android:text="#8E8E8E"
+                                android:textColor="#00000000"
+                                android:textSize="0sp" />
                         </LinearLayout>
 
                     </LinearLayout>

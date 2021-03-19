@@ -1,6 +1,8 @@
 package com.example.Saerok.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +21,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.Saerok.R;
@@ -30,6 +34,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
     private static final String TAG = "AddCategoryActivity";
     private Toolbar toolbar;
     private ImageView titleImageView;
+    private CardView colorCardView;
     private static final int GET_IMAGE_FOR_TITLEIMAGE = 210;
     private ArrayList<CheckBox> CheckBoxes;
     private int selected_position=-1;
@@ -40,6 +45,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         setContentView(R.layout.activity_add_category);
 
         titleImageView = findViewById(R.id.titleImageView);
+        colorCardView = findViewById(R.id.colorCardView);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -118,12 +124,12 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
     }
 
     public void onCheckedChanged(CompoundButton view, boolean b) {
-        Log.d(TAG,Integer.toString(view.getId()));
         if (b) {
-            Log.d(TAG,"checked");
             for (int i=0; i<CheckBoxes.size();i++) {
                 if(CheckBoxes.get(i)==view) {
                     selected_position=i;
+                    Log.e(TAG, Integer.toString(i).concat(view.getText().toString()));
+                    colorCardView.setCardBackgroundColor(Color.parseColor(view.getText().toString()));
                 }
                 else{
                     CheckBoxes.get(i).setChecked(false);
