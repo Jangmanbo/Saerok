@@ -3,12 +3,14 @@ package com.example.Saerok.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -24,11 +26,13 @@ import com.example.Saerok.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AddCategoryActivity extends AppCompatActivity {
+public class AddCategoryActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+    private static final String TAG = "AddCategoryActivity";
     private Toolbar toolbar;
     private ImageView titleImageView;
     private static final int GET_IMAGE_FOR_TITLEIMAGE = 210;
     private ArrayList<CheckBox> CheckBoxes;
+    private int selected_position=-1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,122 +57,23 @@ public class AddCategoryActivity extends AppCompatActivity {
             }
         });
 
-        CheckBox checkBox = findViewById(R.id.checkBox);
-        CheckBox checkBox2 = findViewById(R.id.checkBox2);
-        CheckBox checkBox3 = findViewById(R.id.checkBox3);
-        CheckBox checkBox4 = findViewById(R.id.checkBox4);
-        CheckBox checkBox5 = findViewById(R.id.checkBox5);
-        CheckBox checkBox6 = findViewById(R.id.checkBox6);
-        CheckBox checkBox7 = findViewById(R.id.checkBox7);
-        CheckBox checkBox8 = findViewById(R.id.checkBox8);
-
-
+        CheckBox checkBox = (CheckBox)findViewById(R.id.checkBox);
+        CheckBox checkBox2 = (CheckBox)findViewById(R.id.checkBox2);
+        CheckBox checkBox3 = (CheckBox)findViewById(R.id.checkBox3);
+        CheckBox checkBox4 = (CheckBox)findViewById(R.id.checkBox4);
+        CheckBox checkBox5 = (CheckBox)findViewById(R.id.checkBox5);
+        CheckBox checkBox6 = (CheckBox)findViewById(R.id.checkBox6);
+        CheckBox checkBox7 = (CheckBox)findViewById(R.id.checkBox7);
+        CheckBox checkBox8 = (CheckBox)findViewById(R.id.checkBox8);
+        checkBox.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        checkBox2.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        checkBox3.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        checkBox4.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        checkBox5.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        checkBox6.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        checkBox7.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+        checkBox8.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
         CheckBoxes = new ArrayList<CheckBox>(Arrays.asList(checkBox, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8));
-        checkBox.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-        checkBox2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-        checkBox3.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-        checkBox4.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-        checkBox5.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-        checkBox6.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-        checkBox7.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-        checkBox8.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                if (((CheckBox) view).isChecked()) {
-                    for (int i = 0; i<CheckBoxes.size(); i++) {
-                        if (CheckBoxes.get(i) != view) {
-                            CheckBoxes.get(i).setChecked(false);
-                        }
-                    }
-                }
-            }
-        });
-
     }
 
 
@@ -210,5 +115,23 @@ public class AddCategoryActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.add_category_toolbar_items, menu);
         return true;
+    }
+
+    public void onCheckedChanged(CompoundButton view, boolean b) {
+        Log.d(TAG,Integer.toString(view.getId()));
+        if (b) {
+            Log.d(TAG,"checked");
+            for (int i=0; i<CheckBoxes.size();i++) {
+                if(CheckBoxes.get(i)==view) {
+                    selected_position=i;
+                }
+                else{
+                    CheckBoxes.get(i).setChecked(false);
+                }
+            }
+        }
+        else {
+            selected_position=-1;
+        }
     }
 }
