@@ -27,8 +27,6 @@ import java.util.Arrays;
 public class AddCategoryActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private ImageView titleImageView;
-    private Button galleryButton;
-    private ImageButton galleryImageButton;
     private static final int GET_IMAGE_FOR_TITLEIMAGE = 210;
     private ArrayList<CheckBox> CheckBoxes;
 
@@ -45,18 +43,8 @@ public class AddCategoryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
         getSupportActionBar().setDisplayShowTitleEnabled(false); //기본 타이틀 제거
 
-        galleryButton = findViewById(R.id.galleryButton);
-        galleryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setDataAndType(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-                startActivityForResult(intent, GET_IMAGE_FOR_TITLEIMAGE);
-            }
-        });
-
-        galleryImageButton = findViewById(R.id.galleryImageButton);
-        galleryImageButton.setOnClickListener(new View.OnClickListener() {
+        titleImageView = findViewById(R.id.titleImageView);
+        titleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_PICK);
@@ -69,12 +57,13 @@ public class AddCategoryActivity extends AppCompatActivity {
         CheckBox checkBox2 = findViewById(R.id.checkBox2);
         CheckBox checkBox3 = findViewById(R.id.checkBox3);
         CheckBox checkBox4 = findViewById(R.id.checkBox4);
+        CheckBox checkBox5 = findViewById(R.id.checkBox5);
+        CheckBox checkBox6 = findViewById(R.id.checkBox6);
+        CheckBox checkBox7 = findViewById(R.id.checkBox7);
+        CheckBox checkBox8 = findViewById(R.id.checkBox8);
 
 
-        CheckBoxes = new ArrayList<CheckBox>(Arrays.asList(checkBox, checkBox2, checkBox3, checkBox4));
-
-
-
+        CheckBoxes = new ArrayList<CheckBox>(Arrays.asList(checkBox, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8));
         checkBox.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -127,7 +116,58 @@ public class AddCategoryActivity extends AppCompatActivity {
                 }
             }
         });
+        checkBox5.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+                if (((CheckBox) view).isChecked()) {
+                    for (int i = 0; i<CheckBoxes.size(); i++) {
+                        if (CheckBoxes.get(i) != view) {
+                            CheckBoxes.get(i).setChecked(false);
+                        }
+                    }
+                }
+            }
+        });
+        checkBox6.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if (((CheckBox) view).isChecked()) {
+                    for (int i = 0; i<CheckBoxes.size(); i++) {
+                        if (CheckBoxes.get(i) != view) {
+                            CheckBoxes.get(i).setChecked(false);
+                        }
+                    }
+                }
+            }
+        });
+        checkBox7.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if (((CheckBox) view).isChecked()) {
+                    for (int i = 0; i<CheckBoxes.size(); i++) {
+                        if (CheckBoxes.get(i) != view) {
+                            CheckBoxes.get(i).setChecked(false);
+                        }
+                    }
+                }
+            }
+        });
+        checkBox8.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                if (((CheckBox) view).isChecked()) {
+                    for (int i = 0; i<CheckBoxes.size(); i++) {
+                        if (CheckBoxes.get(i) != view) {
+                            CheckBoxes.get(i).setChecked(false);
+                        }
+                    }
+                }
+            }
+        });
 
     }
 
