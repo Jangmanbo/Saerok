@@ -1,19 +1,15 @@
 package com.example.Saerok.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,7 +18,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.Saerok.R;
@@ -37,7 +32,6 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
     private CardView colorCardView;
     private static final int GET_IMAGE_FOR_TITLEIMAGE = 210;
     private ArrayList<CheckBox> CheckBoxes;
-    private int selected_position=-1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -124,20 +118,12 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
     }
 
     public void onCheckedChanged(CompoundButton view, boolean b) {
-        if (b) {
+        if(b) {
             for (int i=0; i<CheckBoxes.size();i++) {
-                if(CheckBoxes.get(i)==view) {
-                    selected_position=i;
-                    Log.e(TAG, Integer.toString(i).concat(view.getText().toString()));
-                    colorCardView.setCardBackgroundColor(Color.parseColor(view.getText().toString()));
-                }
-                else{
-                    CheckBoxes.get(i).setChecked(false);
-                }
+                if(CheckBoxes.get(i)!=view) CheckBoxes.get(i).setChecked(false);
             }
+            colorCardView.setCardBackgroundColor(Color.parseColor(view.getText().toString()));
         }
-        else {
-            selected_position=-1;
-        }
+        else colorCardView.setCardBackgroundColor(Color.WHITE);
     }
 }
