@@ -4,10 +4,10 @@ import android.graphics.Color;
 
 public class CategoryItem {
     String name;
-    Color color;
+    String color;
     int resId;
 
-    public CategoryItem(String name, Color color, int resId) {
+    public CategoryItem(String name, String color, int resId) {
         this.name=name;
         this.color=color;
         this.resId=resId;
@@ -17,7 +17,7 @@ public class CategoryItem {
         return name;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 

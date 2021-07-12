@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -100,7 +100,10 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/catogoryRecyclerView"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -147,5 +150,5 @@
 
 
         </FrameLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
