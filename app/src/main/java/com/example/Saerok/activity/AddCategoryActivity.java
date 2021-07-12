@@ -8,9 +8,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -30,8 +34,11 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
     private Toolbar toolbar;
     private ImageView titleImageView;
     private CardView colorCardView;
+    private LinearLayout addItemLayout;
+    private int itemNum = 1;
     private static final int GET_IMAGE_FOR_TITLEIMAGE = 210;
     private ArrayList<CheckBox> CheckBoxes;
+    String[] types={"단문형 텍스트", "장문형 텍스트", "체크박스", "별점", "사진"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,7 +81,44 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         checkBox7.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
         checkBox8.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
         CheckBoxes = new ArrayList<CheckBox>(Arrays.asList(checkBox, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8));
+
+        Spinner typeSpinner1 = (Spinner)findViewById(R.id.typeSpinner1);
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        typeSpinner1.setAdapter(adapter);
+        typeSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        addItemLayout = (LinearLayout) findViewById(R.id.addItemLayout);
+        addItemLayout.setOnClickListener(click);
     }
+
+
+    View.OnClickListener click=new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.addItemLayout:
+                    itemNum++;
+                    Toast.makeText(getApplicationContext(), "itemNum : "+String.valueOf(itemNum), Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
 
     @Override
