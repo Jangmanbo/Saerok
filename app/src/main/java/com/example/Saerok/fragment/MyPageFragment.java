@@ -21,10 +21,9 @@ import com.example.Saerok.R;
 import com.example.Saerok.activity.AddCategoryActivity;
 import com.example.Saerok.activity.SettingActivity;
 import com.example.Saerok.adapter.CategoryAdapter;
-import com.example.Saerok.etc.RecyclerViewDecoration;
+import com.example.Saerok.etc.CategoryItemDecoration;
 import com.example.Saerok.source.CategoryItem;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
@@ -81,7 +80,7 @@ public class MyPageFragment extends Fragment {
         });
 
         recyclerView=view.findViewById(R.id.catogoryRecyclerView);
-        recyclerView.addItemDecoration(new RecyclerViewDecoration(50, 70));
+        recyclerView.addItemDecoration(new CategoryItemDecoration(getActivity().getApplicationContext()));
         Log.e("MyPageFragment", "recyclerView find");
         adapter=new CategoryAdapter();
 
