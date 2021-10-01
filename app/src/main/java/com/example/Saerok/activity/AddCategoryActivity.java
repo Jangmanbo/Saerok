@@ -25,6 +25,7 @@ import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
 import com.example.Saerok.R;
+import com.example.Saerok.source.CategoryInfoView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +36,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
     private ImageView titleImageView;
     private CardView colorCardView;
     private LinearLayout addItemLayout;
+    private LinearLayout categoryInfoArea;
     private int itemNum = 1;
     private static final int GET_IMAGE_FOR_TITLEIMAGE = 210;
     private ArrayList<CheckBox> CheckBoxes;
@@ -102,6 +104,8 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
 
         addItemLayout = (LinearLayout) findViewById(R.id.addItemLayout);
         addItemLayout.setOnClickListener(click);
+
+        categoryInfoArea = (LinearLayout) findViewById(R.id.categoryInfoArea);
     }
 
 
@@ -111,6 +115,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.addItemLayout:
+                    categoryInfoArea.addView(new CategoryInfoView(getApplicationContext()));
                     itemNum++;
                     Toast.makeText(getApplicationContext(), "itemNum : "+String.valueOf(itemNum), Toast.LENGTH_SHORT).show();
                     break;
