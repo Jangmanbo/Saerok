@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="1."
@@ -13,10 +13,10 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/itemEditText1"
+        android:id="@+id/itemEditText"
         android:layout_width="150dp"
         android:layout_height="match_parent"
-        android:layout_toEndOf="@+id/textView1"
+        android:layout_toEndOf="@+id/textView"
         android:background="@null"
         android:gravity="bottom"
         android:hint="항목 이름"
@@ -26,7 +26,7 @@
         android:textStyle="bold" />
 
     <Spinner
-        android:id="@+id/typeSpinner1"
+        android:id="@+id/typeSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
@@ -38,7 +38,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center_vertical"
-        android:layout_toEndOf="@+id/typeSpinner1"
+        android:layout_toEndOf="@+id/typeSpinner"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/trashbin" />

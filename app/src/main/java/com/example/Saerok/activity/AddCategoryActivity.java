@@ -22,6 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.Saerok.R;
@@ -36,7 +37,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
     private ImageView titleImageView;
     private CardView colorCardView;
     private LinearLayout addItemLayout;
-    private LinearLayout categoryInfoArea;
+    private RecyclerView categoryInfoRecyclerView;
     private int itemNum = 1;
     private static final int GET_IMAGE_FOR_TITLEIMAGE = 210;
     private ArrayList<CheckBox> CheckBoxes;
@@ -84,7 +85,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         checkBox8.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
         CheckBoxes = new ArrayList<CheckBox>(Arrays.asList(checkBox, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8));
 
-        Spinner typeSpinner1 = (Spinner)findViewById(R.id.typeSpinner1);
+        Spinner typeSpinner1 = (Spinner)findViewById(R.id.typeSpinner);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, types);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -105,7 +106,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         addItemLayout = (LinearLayout) findViewById(R.id.addItemLayout);
         addItemLayout.setOnClickListener(click);
 
-        categoryInfoArea = (LinearLayout) findViewById(R.id.categoryInfoArea);
+        categoryInfoRecyclerView = (RecyclerView) findViewById(R.id.categoryInfoRecyclerView);
     }
 
 
@@ -115,7 +116,7 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.addItemLayout:
-                    categoryInfoArea.addView(new CategoryInfoView(getApplicationContext()));
+                    CategoryInfoView info = new CategoryInfoView(getApplicationContext());
                     itemNum++;
                     Toast.makeText(getApplicationContext(), "itemNum : "+String.valueOf(itemNum), Toast.LENGTH_SHORT).show();
                     break;

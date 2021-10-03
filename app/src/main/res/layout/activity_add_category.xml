@@ -401,18 +401,10 @@
                 android:textSize="27sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/categoryInfoArea"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryInfoRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <com.example.Saerok.source.CategoryInfoView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/CategoryInfo"/>
-
-            </LinearLayout>
+                android:layout_height="match_parent" />
 
             <LinearLayout
                 android:id="@+id/addItemLayout"
