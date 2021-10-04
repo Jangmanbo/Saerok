@@ -27,9 +27,10 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:background="#FFFFFF">
 
         <LinearLayout
@@ -79,7 +80,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="10dp">
 
                 <androidx.cardview.widget.CardView
@@ -128,7 +129,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toEndOf="@id/colorCardView">
@@ -382,7 +383,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal" />
 
             <View
@@ -404,7 +405,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categoryInfoRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never" />
 
             <LinearLayout
                 android:id="@+id/addItemLayout"
@@ -425,12 +428,12 @@
                     app:srcCompat="@drawable/plus" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/numTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="clip_horizontal|center_horizontal|center_vertical"
                     android:layout_weight="1"
-                    android:text="항목 추가하기"
+                    android:text="항목 추가하기 (1/8)"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
@@ -438,5 +441,5 @@
 
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
