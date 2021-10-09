@@ -16,6 +16,7 @@
             android:layout_height="300dp"
             android:contentDescription="backgroundImage"
             android:scaleType="centerCrop"
+            android:tint="#7F000000"
             app:srcCompat="@drawable/sky" />
 
         <LinearLayout
@@ -28,13 +29,14 @@
                 android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
                 android:layout_marginTop="50dp"
                 android:gravity="left"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="이름"
                 android:textColor="#9A9A9A"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -43,19 +45,21 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="장예원"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/introduceTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
                 android:gravity="left"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="자기소개"
                 android:textColor="#9A9A9A"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -63,8 +67,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="자기소개" />
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minLines="1"
+                android:text="예원이의 아카이브북~~~~~ 작심삼일 하지 말고 화이팅!!" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button_round"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="로그아웃"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
 
         </LinearLayout>
@@ -93,8 +112,27 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="profileImage"
                 android:scaleType="centerCrop"
+                android:tint="#7F000000"
                 app:srcCompat="@drawable/purplesky" />
+
+            <ImageView
+                android:id="@+id/add_photo2"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/add_photo" />
         </androidx.cardview.widget.CardView>
 
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/add_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="125dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/add_photo" />
+
 </FrameLayout>

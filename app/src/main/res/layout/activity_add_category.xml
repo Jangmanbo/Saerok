@@ -414,7 +414,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/add_item_button_round"
+                android:background="@drawable/button_round"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
