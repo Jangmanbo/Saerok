@@ -16,7 +16,7 @@
             android:layout_height="300dp"
             android:contentDescription="backgroundImage"
             android:scaleType="centerCrop"
-            android:tint="#7F000000"
+            app:tint="#7F000000"
             app:srcCompat="@drawable/sky" />
 
         <LinearLayout
@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="profileImage"
                 android:scaleType="centerCrop"
-                android:tint="#7F000000"
+                app:tint="#7F000000"
                 app:srcCompat="@drawable/purplesky" />
 
             <ImageView
