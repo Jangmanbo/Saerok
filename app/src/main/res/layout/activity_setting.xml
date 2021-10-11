@@ -5,10 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffffff"
+        android:elevation="5dp"
+        app:menu="@menu/add_category_toolbar_items">
+
+        <TextView
+            android:id="@+id/categoryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="설정"
+            android:textColor="#2C2C2C"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="60dp">
 
         <ImageView
             android:id="@+id/backgroundImage"
@@ -16,8 +37,8 @@
             android:layout_height="300dp"
             android:contentDescription="backgroundImage"
             android:scaleType="centerCrop"
-            app:tint="#7F000000"
-            app:srcCompat="@drawable/sky" />
+            app:srcCompat="@drawable/sky"
+            app:tint="#7F000000" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,7 +116,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="310dp"
         app:cardCornerRadius="50dp"
         app:cardElevation="0dp"
         app:cardMaxElevation="0dp">
@@ -131,7 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="185dp"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/add_photo" />
 
