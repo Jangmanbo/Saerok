@@ -9,9 +9,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,8 +30,10 @@ import static android.app.Activity.RESULT_OK;
 public class PostFragment extends Fragment {
     //private static final int GET_IMAGE_FOR_IMAGELAYOUT = 205;
 
-    androidx.appcompat.widget.Toolbar toolbar;
-    ImageButton galleryButton;
+    private androidx.appcompat.widget.Toolbar toolbar;
+    private ImageButton galleryButton;
+    private Spinner spinner;
+    private String[] categories={"티켓북", "넷플릭스", "독서", "아무거나"};
     //LinearLayout imageLayout;
 
     @Nullable
@@ -37,6 +42,24 @@ public class PostFragment extends Fragment {
         View view=inflater.inflate(R.layout.activity_post, container, false);
         toolbar=view.findViewById(R.id.toolbar);
         galleryButton = view.findViewById(R.id.galleryButton);
+
+        spinner=view.findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, categories);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), categories[i] + " 카테고리 선택", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         /*
         galleryButton.setOnClickListener(new View.OnClickListener() {
