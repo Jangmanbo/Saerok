@@ -157,10 +157,8 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         }
     }
 
-    //추가된 소스, ToolBar에 menu.xml을 인플레이트함
-
+    //ToolBar에 menu.xml을 인플레이트함
     public boolean onCreateOptionsMenu(Menu menu) {
-        //return super.onCreateOptionsMenu(menu);
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.add_category_toolbar_items, menu);
         return true;
