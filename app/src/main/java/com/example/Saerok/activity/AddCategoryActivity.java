@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.Nullable;
@@ -56,10 +57,11 @@ public class AddCategoryActivity extends AppCompatActivity implements CompoundBu
         colorCardView = findViewById(R.id.colorCardView);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar); //툴바를 액션바로 대체
+        ActionBar actionBar = getSupportActionBar(); //ActionBar 객체 생성(액션바 커스텀마이징을 위해)
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
-        getSupportActionBar().setDisplayShowTitleEnabled(false); //기본 타이틀 제거
+        actionBar.setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
+        actionBar.setDisplayShowTitleEnabled(false); //기본 타이틀 제거
 
         titleImageView = findViewById(R.id.titleImageView);
         titleImageView.setOnClickListener(new View.OnClickListener() {
