@@ -1,12 +1,14 @@
 package com.example.Saerok.fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -14,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,6 +27,8 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.Saerok.R;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -33,6 +38,8 @@ public class PostFragment extends Fragment {
     private androidx.appcompat.widget.Toolbar toolbar;
     private ImageButton galleryButton;
     private Spinner spinner;
+    private AppBarLayout appBar;
+    private ScrollView scrollView;
     private String[] categories={"티켓북", "넷플릭스", "독서", "아무거나"};
     //LinearLayout imageLayout;
 
@@ -42,6 +49,11 @@ public class PostFragment extends Fragment {
         View view=inflater.inflate(R.layout.activity_post, container, false);
         toolbar=view.findViewById(R.id.toolbar);
         galleryButton = view.findViewById(R.id.galleryButton);
+
+
+        appBar=view.findViewById(R.id.appbar);
+        scrollView=view.findViewById(R.id.scrollView);
+        final BottomNavigationView bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
 
         spinner=view.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter=new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, categories);
@@ -53,11 +65,25 @@ public class PostFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getContext(), categories[i] + " 카테고리 선택", Toast.LENGTH_SHORT).show();
+                //스피너에서 아이템 선택하면 다시 화면 밝게
+                appBar.setBackgroundColor(Integer.parseInt(String.valueOf(Color.rgb(255, 255, 255))));
+                scrollView.setBackgroundColor(Integer.parseInt(String.valueOf(Color.rgb(255, 255, 255))));
+                bottomNavigationView.setBackgroundColor(Integer.parseInt(String.valueOf(Color.rgb(255, 255, 255))));
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
 
+        spinner.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                //스피너 클릭하면 화면 어둡게
+                appBar.setBackgroundColor(Integer.parseInt(String.valueOf(Color.argb(128, 0,0,0))));
+                scrollView.setBackgroundColor(Integer.parseInt(String.valueOf(Color.argb(128, 0,0,0))));
+                bottomNavigationView.setBackgroundColor(Integer.parseInt(String.valueOf(Color.argb(128, 0,0,0))));
+                return false;
             }
         });
 

@@ -7,8 +7,9 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
-        android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
         android:elevation="5dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -20,7 +21,6 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme" />
 
@@ -34,6 +34,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -56,11 +57,12 @@
                 android:inputType="textPersonName"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_centerInParent="true"
-                android:background="#C4C4C4"/>
+                android:background="#C4C4C4" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -101,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_centerInParent="true"
-                android:background="#C4C4C4"/>
+                android:background="#C4C4C4" />
 
         </LinearLayout>
 
